@@ -1,15 +1,13 @@
-package datagrams;
-
 import java.net.*;
 import java.io.*;
 
 public class Sender implements Runnable {
 
     //lista com os pacotes recebidos
-    private byte[] packetBuffer = new byte[256];
+    private PacketBuffer packetBuffer;
     private DatagramSocket socket;
 
-    public Sender(DatagramSocket socket, byte[] packetBuffer){
+    public Sender(DatagramSocket socket, PacketBuffer packetBuffer){
         this.socket = socket;
         this.packetBuffer = packetBuffer;
     }

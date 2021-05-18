@@ -1,19 +1,16 @@
-package datagrams;
-
 import java.net.*;
 import java.io.*;
 
 public class Catcher implements Runnable{
 
-    private byte[] packetBuffer;
+    private PacketBuffer packetBuffer;
     private DatagramSocket socket;
 
-    public Catcher(DatagramSocket socket, byte[] packetBuffer){
+    public Catcher(DatagramSocket socket, PacketBuffer packetBuffer){
         this.socket = socket;
         this.packetBuffer = packetBuffer;
     }
 
-    //hello?
     @Override
     public void run() {
 
